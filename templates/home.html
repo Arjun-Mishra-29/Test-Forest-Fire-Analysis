@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+
+    <h1 class="text-center">FWI Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_data') }}" method="post" class="mt-4">
+        <input type="text" name="Temperature" placeholder="Temperature" required="required" class="form-control mb-2"/>
+        <input type="text" name="RH" placeholder="RH" required="required" class="form-control mb-2"/>
+        <input type="text" name="Ws" placeholder="Ws" required="required" class="form-control mb-2"/>
+        <input type="text" name="Rain" placeholder="Rain" required="required" class="form-control mb-2"/>
+        <input type="text" name="FFMC" placeholder="FFMC" required="required" class="form-control mb-2"/>
+        <input type="text" name="DMC" placeholder="DMC" required="required" class="form-control mb-2"/>
+        <input type="text" name="ISI" placeholder="ISI" required="required" class="form-control mb-2"/>
+        <input type="text" name="Classes" placeholder="Classes" required="required" class="form-control mb-2"/>
+        <input type="text" name="Region" placeholder="Region" required="required" class="form-control mb-2"/>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    {% if result is not none %}
+        <div class="alert alert-info text-center mt-4">
+            <h4>THE FWI prediction is: {{ results }}</h4>
+        </div>
+    {% endif %}
+
+</body>
+</html>

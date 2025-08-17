@@ -22,9 +22,13 @@ Then open http://127.0.0.1:5000/ in your browser.
 
 📂 Project Structure
 ├── app.py          # Flask app
+
 ├── model.pkl       # Trained Ridge Regression model
+
 ├── templates/      # HTML files
+
 ├── data/           # Dataset
+
 └── requirements.txt
 
 📈 Results
